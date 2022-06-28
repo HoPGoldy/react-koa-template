@@ -19,6 +19,15 @@ if (process.env.NODE_ENV === "production") {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  server: {
+    port: 3500,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3600/api',
+        changeOrigin: true,
+      }
+    }
+  },
   resolve: {
     alias: [{ find: /^~/, replacement: "" }],
   },

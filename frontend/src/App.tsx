@@ -7,7 +7,7 @@ function App() {
 
             <nav className='mb-4 text-blue-600'>
                 <Link to="/" className="mr-4">Home</Link>
-                <Link to="/about">About</Link>
+                <Link to="/requestDemo">Request</Link>
             </nav>
 
             <Routes>

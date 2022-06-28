@@ -1,9 +1,10 @@
-import { FC, lazy, Suspense } from 'react'
-import { useRoutes } from 'react-router-dom'
+import { FC, lazy, Suspense, useLayoutEffect, useState } from 'react'
+import { Router, useRoutes } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
 import Loading from './components/Loading'
 
 const Home = lazy(() => import('./pages/Home'))
-const About = lazy(() => import('./pages/About'))
+const RequestDemo = lazy(() => import('./pages/RequestDemo'))
 
 export const Routes: FC = () => {
     const routes = useRoutes([
@@ -16,10 +17,10 @@ export const Routes: FC = () => {
             )
         },
         {
-            path: '/about',
+            path: '/requestDemo',
             element: (
                 <Suspense fallback={<Loading />}>
-                    <About />
+                    <RequestDemo />
                 </Suspense>
             )
         },
@@ -27,3 +28,29 @@ export const Routes: FC = () => {
 
     return routes
 }
+
+/**
+ * 暴露实例，用于组件外导航
+ */
+export const history = createBrowserHistory({ window })
+
+/**
+ * 暴露了 history 实例的路由组件
+ */
+export const BrowserRouter: FC = (props) => {
+    const [state, setState] = useState({
+      action: history.action,
+      location: history.location
+    });
+  
+    useLayoutEffect(() => history.listen(setState), [history]);
+  
+    return (
+      <Router
+        {...props}
+        location={state.location}
+        navigationType={state.action}
+        navigator={history}
+      />
+    );
+};
