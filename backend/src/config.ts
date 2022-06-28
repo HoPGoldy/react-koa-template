@@ -1,1 +1,1 @@
-export const START_PORT = 8888
+export const START_PORT = 3600

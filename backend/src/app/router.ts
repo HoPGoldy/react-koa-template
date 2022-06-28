@@ -1,20 +1,20 @@
-import Router from "koa-router";
-import { response } from "./utils";
-import mockjs from "mockjs";
+import Router from "koa-router"
+import { response } from "../utils"
 
-const router = new Router();
+const router = new Router()
 
-router.get('/', (ctx, next) => {
+const dataSet = new Set()
+
+router.get('/api/demo', (ctx, next) => {
     ctx.status = 200;
-    response(ctx)
+
+    response(ctx, { code: 200, data: Array.from(dataSet) })
 })
 
-router.get('/user/list', (ctx, next) => {
+router.post('/api/demo', (ctx, next) => {
+    console.log('ctx', ctx.request)
     ctx.status = 200;
-    const data = mockjs.mock({
-        "list|20": [{ "name": "@name", "city": "@city", "province": "@province" }]
-    });
-    response(ctx, { code: 200, msg: '', data });
+    response(ctx, { code: 200, msg: '新增成功' });
 })
 
 export default router;
