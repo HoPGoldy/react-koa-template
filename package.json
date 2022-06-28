@@ -1,0 +1,15 @@
+{
+  "name": "node-fullstack-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:HoPGoldy/node-fullstack-template.git",
+  "author": "HoPGoldy <hpgless@outlook.com>",
+  "scripts": {
+    "dev": "concurrently \"npm run backend-dev\" \"npm run frontend-dev\"",
+    "backend-dev": "npm run dev --prefix backend",
+    "frontend-dev": "npm run dev --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  }
+}
