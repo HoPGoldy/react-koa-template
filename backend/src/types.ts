@@ -3,3 +3,7 @@ export type Response<T = any> = {
     msg?: string;
     data?: T;
 }
+
+export interface AppKoaContext {
+    request: { body: string };
+}

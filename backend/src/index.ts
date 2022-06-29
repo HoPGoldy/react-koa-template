@@ -1,13 +1,15 @@
 import Koa from "koa";
 import router from "./app/router";
 import logger from "koa-logger";
-import bodyParser from "koa-bodyparser";
+import cors from 'koa2-cors';
+import bodyParser from "koa-body";
 import { START_PORT } from "./config";
 
 const app = new Koa();
 
 app.use(logger())
-    .use(bodyParser())
+    .use(cors())
+    .use(bodyParser({ multipart: true }))
     .use(router.routes())
     .use(router.allowedMethods())
     .listen(START_PORT, () => {

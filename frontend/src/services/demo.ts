@@ -1,13 +1,19 @@
 import { sendGet, sendPost, sendPut, sendDelete } from './base'
 
+export interface TodoTask {
+    id: number
+    done: boolean
+    content: string
+}
+
 /** 获取代办列表 */
 export const demoGet = async () => {
-    return sendGet<string[]>('/demo')
+    return sendGet<TodoTask[]>('/demo')
 }
 
 /** 新增代办 */
 export const demoPost = async (task: string) => {
-    return sendPost('/demo', { task })
+    return sendPost<TodoTask[]>('/demo', { task })
 }
 
 /** 完成代办 */

@@ -2,7 +2,7 @@ import qs from 'qs'
 import { history } from '../route'
 
 // 后端地址
-const baseURL = '/api/'
+const baseURL = 'http://localhost:3600/api/'
 
 let token = localStorage.getItem('token')
 
@@ -65,6 +65,7 @@ export const sendGet = async function <T>(url: string, query = {}) {
  export const sendPost = async function <T>(url: string, body = {}) {
     const config: RequestInit = {
         method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
     }
 
@@ -80,6 +81,7 @@ export const sendGet = async function <T>(url: string, query = {}) {
  export const sendPut = async function <T>(url: string, body = {}) {
     const config: RequestInit = {
         method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
     }
 
@@ -95,6 +97,7 @@ export const sendGet = async function <T>(url: string, query = {}) {
  export const sendDelete = async function <T>(url: string, body = {}) {
     const config: RequestInit = {
         method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(body)
     }
 
