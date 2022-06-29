@@ -5,5 +5,5 @@ export type Response<T = any> = {
 }
 
 export interface AppKoaContext {
-    request: { body: string };
+    request: { body: Record<string, any> };
 }

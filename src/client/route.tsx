@@ -1,4 +1,4 @@
-import { FC, lazy, Suspense, useLayoutEffect, useState } from 'react'
+import React, { FC, lazy, Suspense, useLayoutEffect, useState } from 'react'
 import { Router, useRoutes } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 import Loading from './components/Loading'
