@@ -2,7 +2,7 @@ import qs from 'qs'
 import { history } from '../route'
 
 // 后端地址
-const baseURL = 'http://localhost:3600/api/'
+const baseURL = 'api/'
 
 let token = localStorage.getItem('token')
 
