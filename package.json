@@ -8,7 +8,7 @@
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "build": "concurrently \"npm run server:build\" \"npm run client:build\"",
     "start": "node dist/index.js",
-    "server:dev": "ts-node-dev --project tsconfig.server.json src/server",
+    "server:dev": "ts-node-dev --project tsconfig.server.json src",
     "server:build": "tsc --project tsconfig.server.json",
     "client:dev": "vite",
     "client:build": "tsc && vite build"

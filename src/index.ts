@@ -1,10 +1,10 @@
 import Koa from "koa";
-import router from "./app/router";
+import router from "./server/router";
 import historyApiFallback from 'koa2-connect-history-api-fallback';
 import logger from "koa-logger";
 import bodyParser from "koa-body";
 import serve from 'koa-static';
-import { START_PORT } from "./config";
+import { START_PORT } from "./server/config";
 
 const app = new Koa();
 

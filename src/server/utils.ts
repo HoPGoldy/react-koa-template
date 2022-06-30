@@ -1,16 +1,16 @@
-import { Response } from './types';
-import {Context} from "koa";
+import { AppResponse } from '../types/global';
+import { Context } from "koa";
 
-const initialResponse: Response = {
-  code: 200,
-  msg: '',
-  data: null
+const initialResponse: AppResponse = {
+    code: 200,
+    msg: '',
+    data: null
 }
 
-export const response = (ctx: Context, { code, msg, data }: Response = initialResponse) => {
-  ctx.body = {
-    code,
-    msg,
-    data
-  };
+export const response = (ctx: Context, { code, msg, data }: AppResponse = initialResponse) => {
+    ctx.body = {
+        code,
+        msg,
+        data
+    };
 }

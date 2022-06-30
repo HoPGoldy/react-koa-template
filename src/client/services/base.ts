@@ -1,5 +1,6 @@
 import qs from 'qs'
 import { history } from '../route'
+import { AppResponse } from '../../types/global'
 
 // 后端地址
 const baseURL = 'api/'
@@ -13,12 +14,6 @@ export const setToken = (newToken: string) => {
     token = newToken
     if (!newToken) localStorage.removeItem('token')
     else localStorage.setItem('token', newToken)
-}
-
-export type AppResponse<T = any> = {
-    code?: number;
-    msg?: string;
-    data?: T;
 }
 
 /**
