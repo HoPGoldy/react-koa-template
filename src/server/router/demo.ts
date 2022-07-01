@@ -1,6 +1,6 @@
 import Router from "koa-router"
-import { AppKoaContext } from "../../types/global"
-import { TodoTask } from '../../types/demo'
+import { AppKoaContext } from "@/types/global"
+import { TodoTask } from '@/types/demo'
 import { response } from "../utils"
 
 const router = new Router<any, AppKoaContext>()

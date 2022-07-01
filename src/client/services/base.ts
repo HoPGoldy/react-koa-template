@@ -1,6 +1,6 @@
 import qs from 'qs'
 import { history } from '../route'
-import { AppResponse } from '../../types/global'
+import { AppResponse } from '@/types/global'
 
 // 后端地址
 const baseURL = 'api/'

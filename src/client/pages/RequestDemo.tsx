@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { demoDelete, demoGet, demoPost, demoPut } from "../services/demo"
-import { TodoTask } from '../../types/demo'
+import { demoDelete, demoGet, demoPost, demoPut } from "@/client/services/demo"
+import { TodoTask } from '@/types/demo'
 
 const RequestDemo = () => {
     const [newTask, setNewTask] = useState('')

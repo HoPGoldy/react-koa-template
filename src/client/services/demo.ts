@@ -1,5 +1,5 @@
 import { sendGet, sendPost, sendPut, sendDelete } from './base'
-import { TodoTask } from '../../types/demo'
+import { TodoTask } from '@/types/demo'
 
 
 /** 获取代办列表 */

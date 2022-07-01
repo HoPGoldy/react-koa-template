@@ -1,4 +1,4 @@
-import { AppResponse } from '../types/global';
+import { AppResponse } from '@/types/global';
 import { Context } from "koa";
 
 const initialResponse: AppResponse = {
