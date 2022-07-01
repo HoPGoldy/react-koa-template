@@ -1,9 +1,9 @@
-import Router from "koa-router"
-import { AppKoaContext } from "@/types/global"
+import Router from 'koa-router'
+import { AppKoaContext } from '@/types/global'
 import { TodoTask } from '@/types/demo'
-import { response } from "../utils"
+import { response } from '../utils'
 
-const router = new Router<any, AppKoaContext>()
+const router = new Router<unknown, AppKoaContext>()
 
 let newIndex = 2
 const dataSet = new Map<number, TodoTask>([
@@ -51,4 +51,4 @@ router.delete('/demo/:taskId', async ctx => {
     response(ctx, { code: 200, msg: '删除成功', data: getData() })
 })
 
-export default router;
+export default router

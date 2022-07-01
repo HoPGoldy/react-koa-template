@@ -32,7 +32,7 @@ const fetcher = async <T = Response>(url: string, requestInit: RequestInit = {})
     const resp = await fetch(baseURL + pureUrl, init)
 
     if (resp.status === 401) {
-        history.push("/login", { replace: true })
+        history.push('/login', { replace: true })
     }
 
     return resp.json()
@@ -57,7 +57,7 @@ export const sendGet = async function <T>(url: string, query = {}) {
  * @param url 请求路由
  * @param body 请求参数，会放在 body 里
  */
- export const sendPost = async function <T>(url: string, body = {}) {
+export const sendPost = async function <T>(url: string, body = {}) {
     const config: RequestInit = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -73,7 +73,7 @@ export const sendGet = async function <T>(url: string, query = {}) {
  * @param url 请求路由
  * @param body 请求参数，会放在 body 里
  */
- export const sendPut = async function <T>(url: string, body = {}) {
+export const sendPut = async function <T>(url: string, body = {}) {
     const config: RequestInit = {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -89,7 +89,7 @@ export const sendGet = async function <T>(url: string, query = {}) {
  * @param url 请求路由
  * @param body 请求参数，会放在 body 里
  */
- export const sendDelete = async function <T>(url: string, body = {}) {
+export const sendDelete = async function <T>(url: string, body = {}) {
     const config: RequestInit = {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },

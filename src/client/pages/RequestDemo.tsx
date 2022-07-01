@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import { demoDelete, demoGet, demoPost, demoPut } from "@/client/services/demo"
+import React, { useState, useEffect } from 'react'
+import { demoDelete, demoGet, demoPost, demoPut } from '@/client/services/demo'
 import { TodoTask } from '@/types/demo'
 
 const RequestDemo = () => {
@@ -23,7 +23,7 @@ const RequestDemo = () => {
     }
 
     const onClickEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
-        if (e.key !== 'Enter') return;
+        if (e.key !== 'Enter') return
         submitNewTask((e.target as HTMLInputElement).value)
     }
 

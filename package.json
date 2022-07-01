@@ -6,8 +6,9 @@
   "author": "HoPGoldy <hpgless@outlook.com>",
   "scripts": {
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
-    "build": "concurrently \"npm run server:build\" \"npm run client:build\"",
-    "start": "node dist/index.js",
+    "build": "npm run lint && npm run server:build && npm run client:build",
+    "start": "npx cross-env PORT=3700 node dist/index.js",
+    "lint": "eslint src --ext .ts",
     "server:dev": "ts-node-dev --project tsconfig.server.json src",
     "server:build": "tsc --project tsconfig.server.json",
     "client:dev": "vite",
@@ -37,14 +38,20 @@
     "@types/qs": "^6.9.7",
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.30.0",
+    "@typescript-eslint/parser": "^5.30.0",
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.7",
     "concurrently": "^7.2.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.18.0",
+    "eslint-plugin-react": "^7.30.1",
     "less": "^4.1.3",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.4",
     "ts-node-dev": "^2.0.0",
     "typescript": "^4.5.2",
     "vite": "^2.8.0"
-  }
+  },
+  "license": "MIT"
 }

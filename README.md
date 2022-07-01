@@ -1,8 +1,8 @@
-# node-fullstack-template
+# react-koa-tempalte
 
-基于 Node 的全栈项目模板，前端使用 react，后端使用 koa。
+基于 Node / TypeScript 的全栈项目模板，前端使用 react，后端使用 koa。
 
-已包含如下功能：
+包含如下功能：
 
 **项目**
 

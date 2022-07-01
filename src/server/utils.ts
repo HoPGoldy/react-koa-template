@@ -1,5 +1,5 @@
-import { AppResponse } from '@/types/global';
-import { Context } from "koa";
+import { AppResponse } from '@/types/global'
+import { Context } from 'koa'
 
 const initialResponse: AppResponse = {
     code: 200,
@@ -12,5 +12,5 @@ export const response = (ctx: Context, { code, msg, data }: AppResponse = initia
         code,
         msg,
         data
-    };
+    }
 }

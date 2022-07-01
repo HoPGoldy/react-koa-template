@@ -39,18 +39,18 @@ export const history = createBrowserHistory({ window })
  */
 export const BrowserRouter: FC = (props) => {
     const [state, setState] = useState({
-      action: history.action,
-      location: history.location
-    });
+        action: history.action,
+        location: history.location
+    })
   
-    useLayoutEffect(() => history.listen(setState), [history]);
+    useLayoutEffect(() => history.listen(setState), [history])
   
     return (
-      <Router
-        {...props}
-        location={state.location}
-        navigationType={state.action}
-        navigator={history}
-      />
-    );
-};
+        <Router
+            {...props}
+            location={state.location}
+            navigationType={state.action}
+            navigator={history}
+        />
+    )
+}

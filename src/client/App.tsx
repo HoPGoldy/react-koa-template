@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from "react-router-dom";
-import { Routes } from './route';
+import { Link } from 'react-router-dom'
+import { Routes } from './route'
 
 function App() {
     return (
