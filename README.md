@@ -10,6 +10,7 @@
 - 使用 yarn 管理依赖
 - 一键启动、打包前后端
 - 路径别名: `@ => src/`
+- 添加 eslint 检查
 
 **前端**
 
@@ -25,3 +26,4 @@
 - 使用 koa 构建项目
 - 添加 router、logger、bodyParser、static 中间件
 - 前端 history 模式适配
+- 添加 [joi](https://joi.dev/) 进行参数校验
