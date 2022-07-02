@@ -1,4 +1,4 @@
-# react-koa-tempalte
+# react-koa-template
 
 基于 Node / TypeScript 的全栈项目模板，前端使用 react，后端使用 koa。包含如下功能：
 
