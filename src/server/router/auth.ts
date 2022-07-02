@@ -15,7 +15,9 @@ const MOCK_USER = {
 
 const privateRouter = new Router<any, AppKoaContext>()
 
-// 自定义的权限错误处理, 当然这是特殊的业务需求
+/**
+ * 鉴权失败时完善响应提示信息
+ */
 const customAuthorizationCatcher = async (ctx: Context, next: Next) => {
     try {
         await next()
@@ -31,12 +33,14 @@ const customAuthorizationCatcher = async (ctx: Context, next: Next) => {
 privateRouter.use(customAuthorizationCatcher)
 privateRouter.use(jwtKoa({ secret: SECRET }))
 
+// 返回用户的 token 信息
 privateRouter.get('/userInfo', async ctx => {
     response(ctx, { code: 200, data: ctx.state.user })
 })
 
 const loginRouter = new Router<any, AppKoaContext>()
 
+// 登录接口
 loginRouter.post('/login', async ctx => {
     const { username, code } = ctx.request.body
 

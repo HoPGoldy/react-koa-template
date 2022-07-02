@@ -27,7 +27,7 @@ router.get('/demo', async ctx => {
 router.post('/demo', async ctx => {
     const { value, error } = postSchema.validate(ctx.request.body)
     if (error) {
-        response(ctx, { code: 500, msg: error.details })
+        response(ctx, { code: 500, msg: '请填写必要字段' })
         return
     }
 
