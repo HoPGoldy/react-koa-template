@@ -1,8 +1,6 @@
 # react-koa-tempalte
 
-基于 Node / TypeScript 的全栈项目模板，前端使用 react，后端使用 koa。
-
-包含如下功能：
+基于 Node / TypeScript 的全栈项目模板，前端使用 react，后端使用 koa。包含如下功能：
 
 **项目**
 
@@ -30,3 +28,25 @@
 - 前端 history 模式适配
 - 添加 [joi](https://joi.dev/) 进行参数校验
 - 添加 koa-jwt 和 jsonwebtoken 进行登录鉴权
+
+## 使用方法
+
+需求：`node 16+`、`yarn`
+
+```bash
+# 安装依赖
+yarn
+
+# 启动开发环境
+yarn dev
+
+# 打包项目
+yarn build
+
+# 运行打包后的项目
+yarn start
+```
+
+开发环境中，前端默认开放在端口 `3500` 后端开放在端口 `3600`，前端接口通过代理将请求转发到后端。
+
+运行打包后的代码将会默认开放在端口 `3700`，前端静态页面由后端 koa 服务托管。
