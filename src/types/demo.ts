@@ -3,3 +3,7 @@ export interface TodoTask {
     done: boolean
     content: string
 }
+
+export interface UserInfo {
+    username: string
+}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { UserProvider } from './components/UserProvider'
 import { Routes } from './route'
 
 function App() {
@@ -8,12 +9,15 @@ function App() {
 
             <nav className='mb-4 text-blue-600'>
                 <Link to="/" className="mr-4">Home</Link>
-                <Link to="/requestDemo">Request</Link>
+                <Link to="/requestDemo" className="mr-4">Request</Link>
+                <Link to="/authDemo">Auth</Link>
             </nav>
 
-            <Routes>
-                <Routes />
-            </Routes>
+            <UserProvider>
+                <Routes>
+                    <Routes />
+                </Routes>
+            </UserProvider>
         </div>
     )
 }

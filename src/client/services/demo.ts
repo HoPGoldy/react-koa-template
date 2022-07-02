@@ -1,7 +1,6 @@
 import { sendGet, sendPost, sendPut, sendDelete } from './base'
 import { TodoTask } from '@/types/demo'
 
-
 /** 获取代办列表 */
 export const demoGet = async () => {
     return sendGet<TodoTask[]>('/demo')

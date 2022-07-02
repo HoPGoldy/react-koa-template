@@ -5,15 +5,15 @@ import { AppResponse } from '@/types/global'
 // 后端地址
 const baseURL = 'api/'
 
-let token = localStorage.getItem('token')
+let token: null | string = sessionStorage.getItem('token')
 
 /**
  * 设置请求中携带的用户 token
  */
-export const setToken = (newToken: string) => {
+export const setToken = (newToken: string | null) => {
     token = newToken
-    if (!newToken) localStorage.removeItem('token')
-    else localStorage.setItem('token', newToken)
+    if (!newToken) sessionStorage.removeItem('token')
+    else sessionStorage.setItem('token', newToken)
 }
 
 /**
@@ -25,14 +25,14 @@ export const setToken = (newToken: string) => {
 const fetcher = async <T = Response>(url: string, requestInit: RequestInit = {}): Promise<T> => {
     const init: RequestInit = {
         ...requestInit,
-        headers: { ...requestInit.headers, token: token as string },
+        headers: { ...requestInit.headers, Authorization: `Bearer ${token}` },
     }
 
     const pureUrl = url.startsWith('/') ? url.substring(1) : url
     const resp = await fetch(baseURL + pureUrl, init)
 
     if (resp.status === 401) {
-        history.push('/login', { replace: true })
+        history.push('/authDemo', { replace: true })
     }
 
     return resp.json()
